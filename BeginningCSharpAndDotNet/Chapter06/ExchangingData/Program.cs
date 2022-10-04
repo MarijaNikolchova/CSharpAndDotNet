@@ -19,8 +19,8 @@ namespace ExchangingData
             Console.ReadLine();
 
             CustomerName myCustomer;
-            myCustomer.firstName = "Boban";
-            myCustomer.lastName = "Srezovski";
+            myCustomer.firstName = "Marija";
+            myCustomer.lastName = "Nikolchova";
             Console.WriteLine($"{myCustomer.firstName} {myCustomer.lastName}");
             Console.WriteLine($"{myCustomer.fullName}");
             Console.WriteLine($"{myCustomer.FullName}");
