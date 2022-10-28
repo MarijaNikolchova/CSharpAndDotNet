@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BeginningCSharpAndDotNet_17_1_CodeFirstDatabase.Migrations
+namespace BeginningCSharpAndDotNet171CodeFirstDatabase.Migrations
 {
     [DbContext(typeof(BookContext))]
     partial class BookContextModelSnapshot : ModelSnapshot
@@ -15,10 +15,10 @@ namespace BeginningCSharpAndDotNet_17_1_CodeFirstDatabase.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.10")
+                .HasAnnotation("ProductVersion", "7.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Book", b =>
                 {
@@ -26,7 +26,7 @@ namespace BeginningCSharpAndDotNet_17_1_CodeFirstDatabase.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Code"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Code"));
 
                     b.Property<string>("Author")
                         .IsRequired()
