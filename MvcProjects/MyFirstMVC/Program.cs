@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MyFirstMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//Welcome to my first Mvc
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
