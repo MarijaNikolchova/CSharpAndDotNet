@@ -48,6 +48,6 @@ public class BookContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
-            .UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Database=Books;Integrated Security=True");
+            .UseSqlServer(@"Data Source=DESKTOP-MOOICF1;Database=Books;Integrated Security=True");
     }
 }

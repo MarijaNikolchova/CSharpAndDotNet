@@ -46,6 +46,6 @@ public class BookContext : DbContext
     public DbSet<Book> Books { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Data Source=SREZOVSKI-LENOV;Database=Books;Integrated Security=True");
+        optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-MOOICF1;Database=Books;Integrated Security=True");
     }
 }
