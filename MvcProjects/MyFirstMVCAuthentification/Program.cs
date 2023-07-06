@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MyFirstMVCAuthentification.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//Welcome to my first Mcv Authentification
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

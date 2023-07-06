@@ -1,0 +1,39 @@
+﻿</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <p class="error-message">There are validation errors. Please fix them.</p>
+        }
+
+        <form id="registration-form" method="post">
+            <label asp-for="Username">Username:</label>
+            <input asp-for="Username" required>
+            <span asp-validation-for="Username" class="text-danger"></span>
+
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <label asp-for="Password">Password:</label>
+            <input asp-for="Password" required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <label asp-for="ConfirmPassword">Confirm Password:</label>
+            <input asp-for="ConfirmPassword" required>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+            <button type="submit">Register</button>
+            <div class="login-link">Already have an account? <a href="./Login.cshtml">Login now</a></div>
+        </form>
+    </div>
+
+    <!-- Back Home button -->
+    <a href="./index.html" class="button back-button">Back Home</a>
+
+    <!--<script src="~/js/main.js"></script>
+     <script src="~/js/register.js"></script>-->
+</body>
+</html>

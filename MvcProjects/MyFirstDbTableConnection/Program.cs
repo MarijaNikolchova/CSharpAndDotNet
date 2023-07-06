@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MyFirstDbTableConnection.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//Welcome to my first Table Connection
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

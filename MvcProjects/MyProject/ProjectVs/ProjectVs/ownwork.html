@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Stories</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./ownwork.css" />
+    <body>
+        <h3>Please make sure your work is not more than 100,000 characters! Click Submit when you're done!</h3>
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title"><br><br>
+            <label for="body">Body:</label>
+            <textarea id="body" name="body" rows="10" cols="50"></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="error"></div>
+        <a href="./index.html" class="button back-button">Back Home</a>
+
+
+        <script>
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const title = document.querySelector('#title').value;
+                const body = document.querySelector('#body').value;
+
+                try {
+                    const response = await fetch('/api/post', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            title,
+                            body
+                        })
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        window.location.href = `/post?id=${result.id}`;
+                    } else {
+                        const errorDiv = document.querySelector('#error');
+                        errorDiv.innerHTML = result.error;
+                    }
+                } catch (error) {
+                    const errorDiv = document.querySelector('#error');
+                    errorDiv.innerHTML = 'An error occurred while saving your post.';
+                    console.error(error);
+                }
+            });
+        </script>
+        <script src="./ownwork.js"></script>
+        <script src="./Server.js"></script>
+    </body>
+</html>

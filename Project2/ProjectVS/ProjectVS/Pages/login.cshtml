@@ -1,0 +1,43 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+
+        @if (!string.IsNullOrEmpty(TempData["ErrorMessage"] as string))
+        {
+            <p class="error-message">@TempData["ErrorMessage"]</p>
+        }
+
+        <form id="login-form" method="post">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <div class="register-link">Don't have an account? <a href="./Register">Register now</a></div>
+        </form>
+    </div>
+
+    <!-- Back Home button -->
+    <a href="./index.html" class="button back-button">Back Home</a>
+
+    <script src="~/js/main.js"></script>
+    <script src="~/js/login.js"></script>
+</body>
+</html>
